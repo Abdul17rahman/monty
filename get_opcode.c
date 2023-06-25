@@ -13,7 +13,8 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 {
 	instruction_t op_instr[] = {
 		{"push", push},
-		{"pall", pall}
+		{"pall", pall},
+		{"pint", pint}
 	};
 	int i;
 
