@@ -26,8 +26,10 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		if (strcmp(input, op_instr[i].opcode) == 0)
 		{
 			op_instr[i].f(stack, x);
-			break;
+			return;
 		}
 		i++;
 	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", x, input);
+	exit(EXIT_FAILURE);
 }
