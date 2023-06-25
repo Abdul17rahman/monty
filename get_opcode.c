@@ -17,6 +17,7 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		{"pint", pint},
 		{"pop", pop},
 		{"nop", nop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;
