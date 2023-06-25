@@ -19,6 +19,7 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		{"nop", nop},
 		{"swap", swap},
 		{"add", add},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	int i;
