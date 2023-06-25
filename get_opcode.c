@@ -15,7 +15,8 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		{"nop", nop}
+		{"nop", nop},
+		{"pop", pop}
 	};
 	int i;
 
