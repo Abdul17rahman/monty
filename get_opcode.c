@@ -15,8 +15,8 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		{"nop", nop},
-		{"pop", pop}
+		{"pop", pop},
+		{"nop", nop}
 	};
 	int i;
 
@@ -28,8 +28,11 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 			op_instr[i].f(stack, x);
 			return;
 		}
+		else
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", x, input);
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", x, input);
-	exit(EXIT_FAILURE);
 }
