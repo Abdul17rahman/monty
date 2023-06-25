@@ -20,6 +20,7 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
+		{"div", divid},
 		{NULL, NULL}
 	};
 	int i;
