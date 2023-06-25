@@ -16,7 +16,7 @@ void multi(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	if (temp == NULL || temp->next == NULL)
 	{
-		fprintf(stderr, "L%i: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%i: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp->next->n *= temp->n;
