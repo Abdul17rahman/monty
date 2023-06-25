@@ -13,8 +13,10 @@
 
 int main(int argc, char *argv[])
 {
+	stack_t *top = NULL;
 	FILE *file;
 	char line[256];
+	unsigned int num = 1;
 
 	if (argc != 2)
 	{
@@ -23,11 +25,17 @@ int main(int argc, char *argv[])
 	}
 	file = fopen(argv[1], "r");
 
+	if (!file)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+	}
 	while (fgets(line, sizeof(line), file))
 	{
-		printf("%s", line);
+		handle_opcode(line, num, &top);
+		num++;
 	}
 	fclose(file);
+	free_stack(top);
 
 	return (0);
 }
