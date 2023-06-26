@@ -4,12 +4,13 @@
  * handle_opcode - Handles line input
  * @line: full line
  * @x: line number
+ * @top: Pointer to the stack
  *
  * Description: This function selects handles the line input
  * Return: Nothin
  */
-
 int global_val;
+
 void handle_opcode(char line[], unsigned int x, stack_t **top)
 {
 	char *del, *token, *input[5];

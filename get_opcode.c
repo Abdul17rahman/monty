@@ -43,3 +43,4 @@ void execute_opcode(char *input, unsigned int x, stack_t **stack)
 	fprintf(stderr, "L%d: unknown instruction %s\n", x, input);
 	exit(EXIT_FAILURE);
 }
+
