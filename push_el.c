@@ -21,6 +21,11 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	if (!global_val || !isdigit(global_val))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	new_node->n = global_val;
 	new_node->prev = NULL;
 	new_node->next = *stack;
